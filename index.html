@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+    <title>Obuc Gestão de Dados</title>
+    <script type="text/javascript" src="js/cadTable.js"></script>
+
+</head>
+<header class="menu-principal">
+    <div class="logo textheader">
+        <div class="left">
+            <span>Controle de Locais de Trabalho</span>
+        </div>
+        <div class="right">
+            <img src="img/home.png"
+                style="width: 30px; height: 30px; border: 1px solid white; background-color: white; border-radius: 50px;" />
+            <img src="img/user.png"
+                style="width: 30px; height: 30px; border: 1px solid white; background-color: white; border-radius: 50px;" />
+            <div>
+                <span>Usuário</span><br>
+                <span class="typeuser">Administrador</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<body>
+    <div class="wrapper">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h4>Administração</h4>
+            </div>
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Administradores</a>
+                </li>
+                <li>
+                    <a href="#">Áreas</a>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Locais de Trabalho</a>
+                </li>
+                <li>
+                    <a href="#">Habilidades</a>
+                </li>
+                <li>
+                    <a href="#">Log</a>
+                </li>
+                <li>
+                    <a href="#">Responsáveis</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    <i class="fa fa-align-justify"></i>
+                </button>
+            </nav>
+            <div>
+                <div class="workplaces">
+                    <span>Locais de Trabalho</span>
+                </div>
+
+                <div id="dfTrabalho">
+                    <form name="frmTrabalho">
+                        <div class="row workplaces">
+                            <div>
+                                <label>Prédio</label><br>
+                                <select name="txtPredio">
+                                    <option selected disabled value="">Selecione</option>
+                                    <option value="Prédio 01">Prédio 01</option>
+                                    <option value="Prédio 02">Prédio 02</option>
+                                    <option value="Prédio 03">Prédio 03</option>
+                                    <option value="Prédio 04">Prédio 04</option>
+                                    <option value="Prédio 05">Prédio 05</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label>Local de Trabalho</label><br>
+                                <input type="text" name="txtLocal" />
+                            </div>
+                            <input type="button" value="+" onClick="AssignValues(txtPredio.value, txtLocal.value)" />
+                        </div>
+                    </form>
+                </div>
+                <div class="workplaces" id="dtTrabalho">
+                    <table id="tbTrabalho">
+                        <thead>
+                            <tr>
+                                <td class="tbHead">Prédio</td>
+                                <td class="tbHead">Local de Trabalho</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
